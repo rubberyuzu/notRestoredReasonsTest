@@ -3,18 +3,15 @@
 <script>
     console.log("access success");
     let textnode;
-    if (performance.getEntriesByType('navigation')[0].notRestoredReasons != undefined) {
+    if (performance.getEntriesByType('navigation')[0].notRestoredReasons === undefined) {
+        textnode = document.createTextNode("notRestoredReasons do not exist.");  
+        console.log("does not exist");    
+    } else {
         textnode = document.createTextNode("notRestoredReasons exist!");
         console.log("exists");
-    } else {
-        textnode = document.createTextNode("notRestoredReasons do not exist.");  
-        console.log("does not exist");      
     }
-    if (document.body) {
-        document.body.appendChild(textnode);
-    } else {
-        console.log("body does not exist");
-    }
+    document.getElementsByTagName('body')[0].appendChild(textnode);
+
 </script>
 <body>
     <a href="https://www.google.com/">google link</a>
