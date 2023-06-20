@@ -4,7 +4,6 @@
     
     </body>
 <script>
-    window.onload = function() {
     console.log("access success");
     let textnode;
     if (performance.getEntriesByType('navigation')[0].notRestoredReasons === undefined) {
@@ -15,7 +14,6 @@
         console.log("exists");
     }
     document.getElementsByTagName('body')[0].appendChild(textnode);
-    }
 
 </script>
 </html>
