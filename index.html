@@ -4,15 +4,22 @@
 
 </body>
 <script>
-    window.onload = function() {
+    window.onpageshow = function() {
     console.log("access success");
     let textnode;
     if (performance.getEntriesByType('navigation')[0].notRestoredReasons === undefined) {
         textnode = document.createTextNode("notRestoredReasons do not exist.");  
         console.log("does not exist");    
+    } else if (performance.getEntriesByType('navigation')[0].notRestoredReasons === null){
+        textnode = document.createTextNode("notRestoredReasons null");
+        console.log("null");
     } else {
-        textnode = document.createTextNode("notRestoredReasons exist!");
-        console.log("exists");
+        let text ="notRestoredReasons: ";
+        for (reason : performance.getEntriesByType('navigation')[0].notRestoredReasons.reasons) {
+            text += reason;
+        }
+        textnode = document.createTextNode(text);
+        console.log("reasons exist");
     }
     document.getElementsByTagName('body')[0].appendChild(textnode);
     }
