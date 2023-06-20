@@ -15,8 +15,8 @@
         console.log("null");
     } else {
         let text ="notRestoredReasons: ";
-        for (reason : performance.getEntriesByType('navigation')[0].notRestoredReasons.reasons) {
-            text += reason;
+        for (let i=0; i<performance.getEntriesByType('navigation')[0].notRestoredReasons.reasons.length; i++) {
+            text += performance.getEntriesByType('navigation')[0].notRestoredReasons.reasons[i];
         }
         textnode = document.createTextNode(text);
         console.log("reasons exist");
