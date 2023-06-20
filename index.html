@@ -1,9 +1,10 @@
 <html>
+
 <script>
     window.onvisibilitychange=function(){
     console.log("access success");
     let textnode;
-    if (performance.getEntriesByType('navigation')[0].notRestoredReasons) {
+    if (performance.getEntriesByType('navigation')[0].notRestoredReasons != undefined) {
         textnode = document.createTextNode("notRestoredReasons exist!");
         console.log("exists");
     } else {
