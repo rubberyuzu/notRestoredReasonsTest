@@ -10,8 +10,11 @@
         textnode = document.createTextNode("notRestoredReasons do not exist.");  
         console.log("does not exist");      
     }
-    document.body.appendChild(textnode);
+    document.getElementsByTagName('body')[0].appendChild(textnode);
     }
 </script>
-<a href="https://www.google.com/">google link</a>
+<body>
+    <a href="https://www.google.com/">google link</a>
+
+</body>
 </html>
