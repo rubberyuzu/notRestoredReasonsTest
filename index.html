@@ -1,7 +1,6 @@
 <html>
 <script>
-    window.onload=function(){
-        console.log("access success");
+    console.log("access success");
     let textnode;
     if (performance.getEntriesByType('navigation')[0].notRestoredReasons) {
         textnode = document.createTextNode("notRestoredReasons exist!");
@@ -11,7 +10,6 @@
         console.log("does not exist");      
     }
     document.getElementsByTagName('body')[0].appendChild(textnode);
-    }
 </script>
 <body>
     <a href="https://www.google.com/">google link</a>
