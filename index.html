@@ -1,5 +1,6 @@
 <html>
 <script>
+    window.onvisibilitychange=function(){
     console.log("access success");
     let textnode;
     if (performance.getEntriesByType('navigation')[0].notRestoredReasons) {
@@ -9,7 +10,12 @@
         textnode = document.createTextNode("notRestoredReasons do not exist.");  
         console.log("does not exist");      
     }
-    document.getElementsByTagName('body')[0].appendChild(textnode);
+    if (document.body) {
+        document.body.appendChild(textnode);
+    } else {
+        console.log("body does not exist");
+    }
+    }
 </script>
 <body>
     <a href="https://www.google.com/">google link</a>
