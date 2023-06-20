@@ -1,5 +1,6 @@
 <html>
 <script>
+    console.log("access success");
     let textnode;
     if (performance.getEntriesByType('navigation')[0].notRestoredReasons) {
         textnode = document.createTextNode("notRestoredReasons exist!");
