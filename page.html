@@ -1,0 +1,12 @@
+<html>
+<script>
+    let textnode;
+    if (performance.getEntriesByType('navigation')[0].notRestoredReasons) {
+        textnode = document.createTextNode("notRestoredReasons exist!");
+    } else {
+        textnode = document.createTextNode("notRestoredReasons do not exist.");        
+    }
+    document.getElementById('box').appendChild(textnode);
+</script>
+<div id="box"></div>
+</html>
