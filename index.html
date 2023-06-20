@@ -1,7 +1,6 @@
 <html>
 
 <script>
-    window.onvisibilitychange=function(){
     console.log("access success");
     let textnode;
     if (performance.getEntriesByType('navigation')[0].notRestoredReasons != undefined) {
@@ -15,7 +14,6 @@
         document.body.appendChild(textnode);
     } else {
         console.log("body does not exist");
-    }
     }
 </script>
 <body>
