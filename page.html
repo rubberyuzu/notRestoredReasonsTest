@@ -1,0 +1,13 @@
+<html>
+<script>
+    console.log("access success");
+    let textnode;
+    if (performance.getEntriesByType('navigation')[0].notRestoredReasons) {
+        textnode = document.createTextNode("notRestoredReasons exist!");
+    } else {
+        textnode = document.createTextNode("notRestoredReasons do not exist.");        
+    }
+    document.body.appendChild(textnode);
+</script>
+<a href="https://www.google.com/">google link</a>
+</html>
