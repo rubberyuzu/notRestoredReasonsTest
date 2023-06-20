@@ -4,8 +4,10 @@
     let textnode;
     if (performance.getEntriesByType('navigation')[0].notRestoredReasons) {
         textnode = document.createTextNode("notRestoredReasons exist!");
+        console.log("exists");
     } else {
-        textnode = document.createTextNode("notRestoredReasons do not exist.");        
+        textnode = document.createTextNode("notRestoredReasons do not exist.");  
+        console.log("does not exist");      
     }
     document.body.appendChild(textnode);
 </script>
